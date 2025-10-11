@@ -4,8 +4,8 @@ import { navLinks } from '../constants'
 const NavBar = () => {
     return (
         <header>
-            <nav className='flex items-center justify-center gap-10'>
-                <img src="/logo.svg" alt="Apple Logo" />
+            <nav className=' flex items-center justify-center gap-10 '>
+                <img  className='md:justify-between' src="/logo.svg" alt="Apple Logo" />
 
                 <ul className=''>
                     {navLinks.map(({ label }) => (

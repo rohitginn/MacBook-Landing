@@ -6,7 +6,7 @@ export const navLinks = [
                         , { label: 'Watch' }
                         , { label: 'AirPods' }
                         , { label: 'TV & Home' }
-                        , { label: 'Only on Apple' }
+                        , { label: 'Entertainment' }
                         , { label: 'Accessories' }
                         , { label: 'Support' }
                     ]
