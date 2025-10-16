@@ -2,7 +2,7 @@ import { useRef } from "react";
 import { useGSAP } from "@gsap/react";
 import { gsap } from "gsap";
 import { performanceImages, performanceImgPositions } from "../constants/index.js";
-import {useMediaQuery} from "react-responsive";
+import { useMediaQuery } from "react-responsive";
 
 const Performance = () => {
     const isMobile = useMediaQuery({ query: "(max-width: 1024px)" });
@@ -69,16 +69,16 @@ const Performance = () => {
         <section id="performance" ref={sectionRef}>
             <h2>Next-level graphics performance. Game on.</h2>
 
-             <div className="wrapper">
+            <div className="wrapper">
                 {performanceImages.map((item, index) => (
                     <img
                         key={index}
-                        src={item.src}
+                        src={import.meta.env.BASE_URL + item.src} // prepend base URL
                         className={item.id}
                         alt={item.alt || `Performance Image #${index + 1}`}
                     />
                 ))}
-             </div>
+            </div>
 
             <div className="content">
                 <p>
@@ -87,8 +87,8 @@ const Performance = () => {
                     second-generation hardware-accelerated ray tracing engine that renders
                     images faster, so{" "}
                     <span className="text-white">
-            gaming feels more immersive and realistic than ever.
-          </span>{" "}
+                        gaming feels more immersive and realistic than ever.
+                    </span>{" "}
                     And Dynamic Caching optimizes fast on-chip memory to dramatically
                     increase average GPU utilization — driving a huge performance boost
                     for the most demanding pro apps and games.

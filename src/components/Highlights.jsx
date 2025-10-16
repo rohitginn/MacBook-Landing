@@ -1,6 +1,6 @@
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
-import React from 'react'
+import React from 'react';
 import { useMediaQuery } from 'react-responsive';
 
 const Highlights = () => {
@@ -18,7 +18,9 @@ const Highlights = () => {
       duration: 1,
       ease: 'power1.inOut'
     })
-  })
+  });
+
+  const BASE = import.meta.env.BASE_URL;
 
   return (
     <section id='highlights'>
@@ -28,26 +30,25 @@ const Highlights = () => {
       <div className='masonry'>
         <div className='left-column'>
           <div>
-            <img src="/laptop.png" alt="laptop" />
+            <img src={`${BASE}laptop.png`} alt="laptop" />
             <p>Fly through demanding tasks up to 9.8x faster.</p>
           </div>
           <div>
-            <img src="/sun.png" alt="sun" />
+            <img src={`${BASE}sun.png`} alt="sun" />
             <p>A stunning <br />
               Liquid Retina XDR <br />
               display.</p>
           </div>
         </div>
 
-
         <div className='right-column'>
           <div className='apple-gradient'>
-            <img src="/ai.png" alt="AI" />
+            <img src={`${BASE}ai.png`} alt="AI" />
             <p>Built for <br/>
               <span>Apple Intelligence.</span></p>
           </div>
           <div>
-            <img src="/battery.png" alt="Battery" />
+            <img src={`${BASE}battery.png`} alt="Battery" />
             <p>Up to 
               <span className='green-gradient'>{" "}14 more hours{" "}</span> battery life.
               <span className='text-dark-100'>{' '}(Up to 24 hours total.)</span></p>
@@ -58,4 +59,4 @@ const Highlights = () => {
   )
 }
 
-export default Highlights
+export default Highlights;

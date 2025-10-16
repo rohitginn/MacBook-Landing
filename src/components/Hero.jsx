@@ -11,10 +11,10 @@ const Hero = () => {
     <section id="hero" className='mt-35 pb-0' >
         <div>
             <h1 className='text-3xl'>MacBook Pro</h1>
-            <img className='pt-0 w-[650px]' src="/title.png" alt="MacBook Pro Title" />
+            <img className='pt-0 w-[650px]' src={import.meta.env.BASE_URL + 'title.png'} alt="MacBook Pro Title" />
         </div>
 
-        <video className=' mb-0' src="/videos/hero.mp4" autoPlay muted playsInline />
+        <video className=' mb-0' src={import.meta.env.BASE_URL + 'videos/hero.mp4'} autoPlay muted playsInline />
 
         <button className='mt-0'>Buy</button>
         <p>From ₹169900.00*</p>

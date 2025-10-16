@@ -7,7 +7,7 @@ const Footer = () => {
       <div className="info">
         <p>More ways to shop: Find an Apple Store orother retailer near you. Or call 000800 040 1966.
         </p>
-        <img src="/logo.svg" alt="Apple Logo" />
+        <img src={import.meta.env.BASE_URL + 'logo.svg'} alt="Apple Logo" />
       </div>
       
       <hr/>
