@@ -5,7 +5,7 @@ const NavBar = () => {
     return (
         <header>
             <nav className=' flex items-center justify-center gap-10 '>
-                <img  className='md:justify-between' src={import.meta.env.BASE_URL + 'logo.png'} alt="Apple Logo" />
+                <img  className='md:justify-between' src={import.meta.env.BASE_URL + 'logo.svg'} alt="Apple Logo" />
 
                 <ul className=''>
                     {navLinks.map(({ label }) => (
