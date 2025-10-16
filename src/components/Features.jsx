@@ -14,6 +14,7 @@ const ModelScroll = () => {
     const groupRef = useRef(null);
     const isMobile = useMediaQuery({ query: '(max-width: 1024px)'})
     const { setTexture } = useMacbookStore();
+    const BASE = import.meta.env.BASE_URL;
 
     // Pre-load all feature videos during component mount
     useEffect(() => {
@@ -21,7 +22,7 @@ const ModelScroll = () => {
             const v = document.createElement('video');
 
             Object.assign(v, {
-                src: import.meta.env.BASE_URL + feature.videoPath,
+                src: BASE + feature.videoPath,
                 muted: true,
                 playsInline: true,
                 preload: 'auto',
@@ -33,7 +34,6 @@ const ModelScroll = () => {
     }, []);
 
     useGSAP(() => {
-        // 3D MODEL ROTATION ANIMATION
         const modelTimeline = gsap.timeline({
             scrollTrigger: {
                 trigger: '#f-canvas',
@@ -44,7 +44,6 @@ const ModelScroll = () => {
             }
         });
 
-        // SYNC THE FEATURE CONTENT
         const timeline = gsap.timeline({
             scrollTrigger: {
                 trigger: '#f-canvas',
@@ -52,28 +51,26 @@ const ModelScroll = () => {
                 end: 'bottom  top',
                 scrub: 1,
             }
-        })
+        });
 
-        // 3D SPIN
         if(groupRef.current) {
             modelTimeline.to(groupRef.current.rotation, { y: Math.PI * 2, ease: 'power1.inOut'})
         }
 
-        // Content & Texture Sync
         timeline
-            .call(() => setTexture(import.meta.env.BASE_URL + 'videos/feature-1.mp4'))
+            .call(() => setTexture(BASE + 'videos/feature-1.mp4'))
             .to('.box1', { opacity: 1, y: 0, delay: 1 })
 
-            .call(() => setTexture(import.meta.env.BASE_URL + 'videos/feature-2.mp4'))
+            .call(() => setTexture(BASE + 'videos/feature-2.mp4'))
             .to('.box2', { opacity: 1, y: 0 })
 
-            .call(() => setTexture(import.meta.env.BASE_URL + 'videos/feature-3.mp4'))
+            .call(() => setTexture(BASE + 'videos/feature-3.mp4'))
             .to('.box3', { opacity: 1, y: 0 })
 
-            .call(() => setTexture(import.meta.env.BASE_URL + 'videos/feature-4.mp4'))
+            .call(() => setTexture(BASE + 'videos/feature-4.mp4'))
             .to('.box4', { opacity: 1, y: 0})
 
-            .call(() => setTexture(import.meta.env.BASE_URL + 'videos/feature-5.mp4'))
+            .call(() => setTexture(BASE + 'videos/feature-5.mp4'))
             .to('.box5', { opacity: 1, y: 0 })
     }, []);
 
@@ -87,6 +84,8 @@ const ModelScroll = () => {
 }
 
 const Features = () => {
+    const BASE = import.meta.env.BASE_URL;
+
     return (
         <section id="features">
             <h2>See it all in a new light.</h2>
@@ -100,7 +99,7 @@ const Features = () => {
             <div className="absolute inset-0">
                 {features.map((feature, index) => (
                     <div key={feature.id} className={clsx('box', `box${index + 1}`, feature.styles)}>
-                        <img src={feature.icon} alt={feature.highlight} />
+                        <img src={BASE + feature.icon} alt={feature.highlight} />
                         <p>
                             <span className="text-white">{feature.highlight}</span>
                             {feature.text}
@@ -112,4 +111,4 @@ const Features = () => {
     )
 }
 
-export default Features
+export default Features;
