@@ -19,7 +19,7 @@ export default function MacbookModel14(props) {
   const modelPath = `${import.meta.env.BASE_URL}models/macbook-14-transformed.glb`;
   const { nodes, materials , scene } = useGLTF(modelPath)
 
-  const texture = useTexture('/screen.png');
+  const texture = useTexture(import.meta.env.BASE_URL + 'screen.png');
     texture.colorSpace = SRGBColorSpace;
     texture.needsUpdate = true;
 
