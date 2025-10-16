@@ -5,7 +5,7 @@ const NavBar = () => {
     return (
         <header>
             <nav className=' flex items-center justify-center gap-10 '>
-                <img  className='md:justify-between' src="/logo.svg" alt="Apple Logo" />
+                <img  className='md:justify-between' src={import.meta.env.BASE_URL + 'logo.png'} alt="Apple Logo" />
 
                 <ul className=''>
                     {navLinks.map(({ label }) => (
@@ -17,12 +17,12 @@ const NavBar = () => {
 
                 <div className='flex-center gap-6'>
                     <button>
-                        <img src="/search.svg" alt="Search" />
+                        <img src={import.meta.env.BASE_URL + 'search.svg'} alt="Search" />
                     </button>
 
 
                     <button>
-                        <img src="/cart.svg" alt="Cart" />
+                        <img src={import.meta.env.BASE_URL + 'cart.svg'} alt="Cart" />
                     </button>
                 </div>
             </nav>
