@@ -31,7 +31,7 @@ const ModelScroll = () => {
 
             v.load();
         })
-    }, []);
+    }, [BASE]);
 
     useGSAP(() => {
         const modelTimeline = gsap.timeline({
